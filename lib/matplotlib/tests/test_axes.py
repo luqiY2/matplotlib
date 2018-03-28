@@ -39,7 +39,7 @@ def test_get_labels():
     assert ax.get_xlabel() == 'x label'
     assert ax.get_ylabel() == 'y label'
 
-@image_comparison(baseline_images=['test2'], extensions=['png'], style='mpl20')
+@image_comparison(baseline_images=['test2'])
 def test_pie_default():
     labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
     sizes = [15, 30, 45, 10]
