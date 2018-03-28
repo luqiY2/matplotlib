@@ -39,15 +39,18 @@ def test_get_labels():
     assert ax.get_xlabel() == 'x label'
     assert ax.get_ylabel() == 'y label'
 
-@image_comparison(baseline_images=['pie_demo'], extensions=['png'], style='mpl20')
+@image_comparison(baseline_images=['pie_demo_1'], extensions=['png'], style='mpl20')
 def test_pie_default():
     labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
     sizes = [15, 30, 45, 10]
-    explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+    colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+    explode = (0, 0.1, 0, 0) 
+    plt.figure(figsize=(4.4,3.6))
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors,
+            autopct='%1.1f%%', shadow=True, startangle=90)
 
-    fig1, ax1 = plt.subplots(figsize=(5.5, 4.5))
-    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-            shadow=True, startangle=90)
+
+
 @image_comparison(baseline_images=['acorr'], extensions=['png'], style='mpl20')
 def test_acorr():
     np.random.seed(19680801)
