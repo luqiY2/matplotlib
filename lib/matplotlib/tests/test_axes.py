@@ -39,7 +39,7 @@ def test_get_labels():
     assert ax.get_xlabel() == 'x label'
     assert ax.get_ylabel() == 'y label'
 
-@image_comparison(baseline_images=['pie_default'], extensions=['png'])
+@image_comparison(baseline_images=['pie_default'], extensions=['png'], style='mpl20')
 def test_pie_default():
 	fig, ax = plt.subplots(figsize=(6.4, 4.8))
 	ax.pie([20, 30, 40, 10], labels=('groupA', 'groupB', 'groupC', 'groupD')
