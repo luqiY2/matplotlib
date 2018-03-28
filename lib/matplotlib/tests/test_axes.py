@@ -41,7 +41,7 @@ def test_get_labels():
 
 @image_comparison(baseline_images=['pie_default'], extensions=['png'])
 def test_pie_default():
-	fig, ax = plt.subplots()
+	fig, ax = plt.subplots(figsize=(6.4, 4.8))
 	ax.pie([20, 30, 40, 10], labels=('groupA', 'groupB', 'groupC', 'groupD')
                     , autopct='%1.1f%%')
 	
