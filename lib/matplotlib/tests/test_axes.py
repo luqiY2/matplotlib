@@ -39,7 +39,11 @@ def test_get_labels():
     assert ax.get_xlabel() == 'x label'
     assert ax.get_ylabel() == 'y label'
 
-
+@image_comparison(baseline_images=['pie_default'], extensions=['png']):
+	fig,ax = plt.subplot()
+	pie1=ax.pie([20, 30, 40, 10], labels=('groupA', 'groupB', 'groupC', 'groupD')
+                    , autopct='%1.1f%%')
+	
 @image_comparison(baseline_images=['acorr'], extensions=['png'], style='mpl20')
 def test_acorr():
     np.random.seed(19680801)
